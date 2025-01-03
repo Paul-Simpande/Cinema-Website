@@ -22,6 +22,10 @@ function Header() {
                     <li className="nav__item">
                         <a href="#contact" className="nav__link">Contact & Support</a>
                     </li>
+                    <li className="nav__item">
+                        <a href="#contact" className="nav__link">Contact & Support</a>
+                    </li>
+
                 </ul>
                 <i className='bx bx-x nav__close' id="nav-close"></i>
             </div>
