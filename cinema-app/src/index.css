@@ -29,7 +29,7 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
 
-  /*========== Font weight ==========*/
+  /*========== Font Weight ==========*/
   --font-regular: 400;
   --font-semi-bold: 600;
   --font-bold: 700;
@@ -39,7 +39,7 @@
   --z-fixed: 100;
 }
 
-/*========== Responsive Typography ==========*/
+/*=============== RESPONSIVE TYPOGRAPHY ===============*/
 @media screen and (min-width: 1150px) {
   :root {
     --biggest-font-size: 5.5rem;
@@ -98,7 +98,7 @@ img {
   height: auto;
 }
 
-/*=============== MOVIE CARD ===============*/
+/*=============== CARD STYLES ===============*/
 .card-container {
   border: 1px solid var(--text-color-light);
   border-radius: 10px;
@@ -131,62 +131,12 @@ img {
   color: var(--text-color);
 }
 
-<<<<<<< HEAD
-/*=============== HEADER & NAV ===============*/
-.header{
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  z-index: var(--z-fixed);
-  padding: 0px 20px;
-=======
 .first-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
->>>>>>> eb19dd31b91a5b477a259119578cbe498c670bf5
 }
-.nav{
-  position: relative;
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav__logo{
-  color: var(--first-color);
-  font-weight: var(--font-bold);
-} 
- .nav__list{
-  display: flex;
-  flex-direction: row;
-  column-gap: 4rem;
- }
- .nav__link{
-  position: relative;
-  color: var(--text-color);
-  font-weight: var(--font-semi-bold);
-  transition: color .4s;
- }
- .nav__link::after{
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--first-color-light);
-  position: absolute;
-  left: 0;
-  bottom: -.5rem;
-  transition: width .3s;
- }
- .nav__link:hover{
-  color: var(--first-color-light);
- }
- nav .nav__link:hover::after{
-  width: 50%;
- }
 
 .title {
   font-size: 24px;
@@ -208,38 +158,83 @@ img {
   color: var(--first-color);
 }
 
-/*=============== SCROLL BAR ===============*/
+/*=============== SLIDER STYLES ===============*/
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-card {
+  flex: 0 0 300px;
+  margin: 10px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-button:hover {
+  background-color: #555;
+}
+
+.slider-button.left {
+  left: 10px;
+}
+
+.slider-button.right {
+  right: 10px;
+}
+
+/*=============== SCROLLBAR ===============*/
 ::-webkit-scrollbar {
   width: 1rem;
   background-color: var(--scrollbar-bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--scrollbar-thumb-hover);
 }
 
 /*=============== ANIMATIONS ===============*/
 @keyframes glowing {
-  0% { background-position: 0 0; }
+  0%, 100% { background-position: 0 0; }
   50% { background-position: 200% 0; }
-  100% { background-position: 0 0; }
 }
 
 @keyframes scroll-down {
-  0% {
-    transform: translateY(-1rem);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0.6rem);
-    opacity: 0;
-  }
+  0% { transform: translateY(-1rem); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0.6rem); opacity: 0; }
 }
 
 /*=============== RESPONSIVE DESIGN ===============*/
@@ -263,83 +258,14 @@ img {
     font-size: 14px;
   }
 }
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 300px) {
-<<<<<<< HEAD
-  .nav__menu{
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background-color: hsl(var(--hue), 70%, 4%, .2);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    width: 80%;
-    height: 100%;
-    padding: 7rem 3rem;
-    transition: right .4s;
-}
-}
 
-/* For medium devices */
-@media screen and (max-width: 540px){
-  .nav__menu{
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background-color: hsl(var(--hue), 70%, 4%, .2);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    width: 80%;
-    height: 100%;
-    padding: 7rem 3rem;
-    transition: right .4s;
-}
-}
-=======
+@media screen and (max-width: 300px) {
   .card-container {
-    width: 90%; /* Adjust width for small screens */
-    height: auto; /* Allow height to adjust dynamically */
     padding: 10px;
     margin: 10px;
   }
 
-  .card-container .card-image {
-    width: 100%; /* Adjust to fit within the container */
-    height: auto; /* Maintain aspect ratio */
-  }
-
   .title {
-    font-size: 18px; /* Scale down font size */
-    max-width: 100%; /* Utilize full width of the container */
-  }
-
-  .schedule {
-    font-size: 14px; /* Adjust font size */
-  }
-}
-
-/* For medium devices */
-@media screen and (max-width: 540px) {
-  .card-container {
-    width: 95%; /* Adjust width for medium screens */
-    height: auto;
-    padding: 15px;
-    margin: 15px;
-  }
->>>>>>> eb19dd31b91a5b477a259119578cbe498c670bf5
-
-  .card-container .card-image {
-    width: 90%; /* Slightly reduce image size */
-    height: auto;
-  }
-
-  .title {
-    font-size: 20px; /* Slightly larger font for medium screens */
-    max-width: 100%;
-  }
-
-  .schedule {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
